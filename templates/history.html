@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+        <table>
+          <tr>
+            <th scope="col">  Symbol</th>
+            <th scope="col">  Status - Buy/Sell </th>
+          	<th scope="col">  Purchase/Sold Price</th>
+          	<th scope="col">  Quantity</th>
+          	<th scope="col">  Filled </th>
+          </tr>
+          {% for stock in stocks %}
+            <tr>
+                <td>{{ stock.symbol}}</td>
+                <td>{{ status }}</td>
+                <td>{{ stock.cost }}</td>
+                <td>{{ stock.quantity }}</td>
+                <td>{{ filled }}</td>
+            </tr>
+        {% endfor %}
+
+        {% for stock in stocks2 %}
+            <tr>
+                <td>{{ stock.symbol}}</td>
+                <td>{{ status2 }}</td>
+                <td>{{ stock.sell_price }}</td>
+                <td>{{ stock.quantity }}</td>
+                <td>{{ filled2 }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+{% endblock %}
